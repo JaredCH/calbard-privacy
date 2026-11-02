@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CalBard Privacy Policy</title>
+<meta name="description" content="CalBard privacy policy. CalBard has no server and no account system; your data stays on your device.">
+<meta name="robots" content="index, follow">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #5c5c5c;
+    --rule: #e2e2e2;
+    --accent: #0b6bcb;
+    --code-bg: #f4f4f5;
+    --table-head: #f7f7f8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16181c;
+      --fg: #e8e8ea;
+      --muted: #a0a3a8;
+      --rule: #2c2f35;
+      --accent: #6cb0ff;
+      --code-bg: #22252b;
+      --table-head: #1d2026;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+  }
+  main {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 5rem;
+  }
+  h1 {
+    font-size: 1.9rem;
+    line-height: 1.2;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.02em;
+  }
+  h2 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin: 2.5rem 0 0.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    letter-spacing: -0.01em;
+  }
+  h3 {
+    font-size: 1.02rem;
+    margin: 1.75rem 0 0.5rem;
+  }
+  p { margin: 0 0 1rem; }
+  ul, ol { margin: 0 0 1rem; padding-left: 1.4rem; }
+  li { margin-bottom: 0.35rem; }
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { text-decoration-thickness: 2px; }
+  strong { font-weight: 650; }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+  code {
+    background: var(--code-bg);
+    padding: 0.12em 0.35em;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 0 1.25rem;
+    font-size: 0.94rem;
+    display: block;
+    overflow-x: auto;
+  }
+  th, td {
+    text-align: left;
+    padding: 0.55rem 0.7rem;
+    border: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  th { background: var(--table-head); font-weight: 650; }
+  blockquote {
+    margin: 0 0 1rem;
+    padding: 0.1rem 0 0.1rem 1rem;
+    border-left: 3px solid var(--rule);
+    color: var(--muted);
+  }
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 0.875rem;
+  }
+  @media (max-width: 480px) {
+    main { padding: 1.75rem 1rem 3rem; }
+    h1 { font-size: 1.55rem; }
+    table { font-size: 0.875rem; }
+  }
+</style>
+</head>
+<body>
+<main>
+<h1>CalBard Privacy Policy</h1>
+<p><strong>Last updated: 2026-11-01</strong></p>
+<p>CalBard is a personal dashboard app for Android TV, tablets, and phones. It shows
+weather and calendar events on a single screen.</p>
+<p>This policy explains what CalBard does with your information. The short version:
+<strong>CalBard has no server and no account system. Your data stays on your device.</strong></p>
+<hr>
+<h2>1. Who we are</h2>
+<p>CalBard is developed and published by an individual developer. For any privacy
+question, contact:</p>
+<p><strong>Email:</strong> <a href="mailto:privacy@calbard.app">privacy@calbard.app</a></p>
+<hr>
+<h2>2. What CalBard stores on your device</h2>
+<p>Everything CalBard remembers is stored locally on the device where you installed
+it. Nothing is uploaded to a CalBard server, because no such server exists.</p>
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Why it is stored</th>
+<th>Where it lives</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Your location (ZIP code or latitude/longitude that <strong>you type in</strong>)</td>
+<td>To fetch weather for that place</td>
+<td>App preferences</td>
+</tr>
+<tr>
+<td>Calendar feeds you add (ICS URLs)</td>
+<td>To display your events</td>
+<td>App preferences</td>
+</tr>
+<tr>
+<td>Cached weather and calendar responses</td>
+<td>To show data instantly and work offline</td>
+<td>Local database</td>
+</tr>
+<tr>
+<td>Display preferences (theme, layout, which sections are visible)</td>
+<td>To remember your setup</td>
+<td>App preferences</td>
+</tr>
+</tbody></table>
+<p>On Android, any credentials you enter are held in <code>EncryptedSharedPreferences</code>,
+which is backed by the Android Keystore. On the web build, they are held in the
+browser&#39;s <code>localStorage</code> for the site you loaded. Version 1.0.0 has no Google
+sign-in, so in practice the only credential-like value stored is the ICS feed URL
+you paste in.</p>
+<p><strong>CalBard does not collect:</strong> your name, your contacts, your device identifiers,
+your advertising ID, your precise GPS location, or any analytics or crash
+telemetry.</p>
+<hr>
+<h2>3. Where CalBard sends data</h2>
+<p>CalBard makes direct requests from your device to the services below. Each
+request necessarily reveals your IP address and a User-Agent string to that
+service. No other information about you is included unless noted.</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>What is sent</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Open-Meteo</strong> (<code>api.open-meteo.com</code>, <code>geocoding-api.open-meteo.com</code>)</td>
+<td>Latitude/longitude or a place name you typed</td>
+<td>Weather forecast and geocoding</td>
+</tr>
+<tr>
+<td><strong>National Weather Service</strong> (<code>api.weather.gov</code>)</td>
+<td>Latitude/longitude</td>
+<td>Active weather alerts (US only)</td>
+</tr>
+<tr>
+<td><strong>Your calendar host</strong> (whatever ICS URL you add)</td>
+<td>A plain HTTPS GET for the feed</td>
+<td>Read-only calendar events</td>
+</tr>
+</tbody></table>
+<p>CalBard does not operate a proxy or relay for these requests in the published
+Android app. Your device talks to each service directly.</p>
+<h3>Services not used in this version</h3>
+<p>Version 1.0.0 ships without the following integrations. They are listed here so
+this policy stays accurate if a later version enables them; <strong>none of them is
+contacted by the app you installed</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Would be used for</th>
+<th>Status in 1.0.0</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Google Calendar API</strong> (<code>www.googleapis.com</code>)</td>
+<td>Read-only calendar events via OAuth</td>
+<td>Not enabled — no Google sign-in in this version</td>
+</tr>
+<tr>
+<td><strong>ESPN</strong> (<code>site.api.espn.com</code>)</td>
+<td>Sports scores and schedules</td>
+<td>Not enabled — sports section not included</td>
+</tr>
+<tr>
+<td><strong>RainViewer</strong> (<code>api.rainviewer.com</code>, <code>tilecache.rainviewer.com</code>)</td>
+<td>Weather radar imagery</td>
+<td>Not enabled — radar section not included</td>
+</tr>
+<tr>
+<td><strong>OpenStreetMap</strong> (<code>tile.openstreetmap.org</code>)</td>
+<td>Base map tiles</td>
+<td>Not enabled — no map is rendered</td>
+</tr>
+</tbody></table>
+<p>If a future version enables any of these, this policy will be updated before that
+version is published, and the &quot;Last updated&quot; date above will change.</p>
+<hr>
+<h2>4. Google Calendar data</h2>
+<p><strong>This section does not apply to version 1.0.0.</strong> The Google sign-in flow is not
+included in this version, so CalBard cannot request a Google scope and never
+receives Google Calendar data. It is kept here for a future version that adds
+Google sign-in.</p>
+<p>If a later version offers Google sign-in, this is what it would do:</p>
+<ul>
+<li>CalBard requests the scope <code>https://www.googleapis.com/auth/calendar.readonly</code>.
+This is <strong>read-only</strong>. CalBard cannot create, edit, or delete events.</li>
+<li>CalBard also requests <code>https://www.googleapis.com/auth/userinfo.email</code> so it can
+show you which account is connected.</li>
+<li>Calendar data is used <strong>only</strong> to render your dashboard. It is not sent to any
+third party, not used for advertising, not used to train models, and not sold.</li>
+<li>The OAuth refresh token is stored in encrypted storage on your device.</li>
+<li>You can revoke access at any time at
+<a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>, or by removing the account inside
+CalBard&#39;s settings.</li>
+</ul>
+<p>CalBard&#39;s use of information received from Google APIs adheres to the
+<a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>,
+including the Limited Use requirements.</p>
+<hr>
+<h2>5. Data sharing and sale</h2>
+<p>CalBard does not sell, rent, or share your personal information with anyone. The
+only outbound data flows are the direct service requests listed in section 3.</p>
+<hr>
+<h2>6. Children</h2>
+<p>CalBard is not directed at children under 13 and does not knowingly collect
+information from them. Because CalBard collects no personal information at all,
+it does not fall under COPPA&#39;s data-collection provisions.</p>
+<hr>
+<h2>7. Security</h2>
+<ul>
+<li>All network requests use HTTPS. Cleartext HTTP is disabled in the Android app.</li>
+<li>Credentials are stored using Android&#39;s Keystore-backed encrypted preferences.</li>
+<li>Android backup is disabled for CalBard, so your credentials are not copied to
+Google Drive or transferred to a new device.</li>
+<li>The Android WebView is locked down: file access, content access, and
+cross-origin file access are all disabled, and mixed content is blocked.</li>
+</ul>
+<p>No system is perfectly secure. If you believe your CalBard data has been
+compromised, contact the address in section 1.</p>
+<hr>
+<h2>8. Data retention and deletion</h2>
+<p>All CalBard data lives on your device and is under your control.</p>
+<ul>
+<li><strong>To delete everything:</strong> uninstall the app, or use Android&#39;s <em>Settings → Apps →
+CalBard → Storage → Clear data</em>.</li>
+<li><strong>To delete only cached data:</strong> use the refresh/clear-cache control in CalBard&#39;s
+settings.</li>
+<li><strong>To revoke Google access:</strong> not applicable in version 1.0.0 — there is no
+Google sign-in. If a later version adds it, you would remove the account in
+CalBard&#39;s settings and confirm at <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>.</li>
+</ul>
+<p>Because there is no CalBard server, there is no server-side copy to delete and no
+deletion request to file.</p>
+<hr>
+<h2>9. Changes to this policy</h2>
+<p>If this policy changes, the &quot;Last updated&quot; date above will change and the new
+version will be published at the same URL. Material changes will also be noted in
+the app&#39;s release notes.</p>
+<hr>
+<h2>10. Attribution</h2>
+<p>CalBard displays data from the services in section 3. Weather data by
+<a href="https://open-meteo.com/">Open-Meteo</a> (CC BY 4.0). Alerts by NOAA/NWS (public
+domain). Calendar data comes from the ICS feeds you add yourself.</p>
+<p>The same attribution is shown in the app under Settings → About → Data sources,
+so it is visible without visiting this page.</p>
+
+<footer>
+  <p>CalBard is an independent app. This page is the canonical privacy policy
+  referenced from the Google Play listing and from the app's Settings &rarr;
+  About screen.</p>
+</footer>
+</main>
+</body>
+</html>

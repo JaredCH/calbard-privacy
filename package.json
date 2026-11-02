@@ -1,0 +1,13 @@
+{
+  "name": "calbard-privacy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public privacy policy for the CalBard Android app",
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "dependencies": {
+    "marked": "^18.1.2"
+  }
+}
