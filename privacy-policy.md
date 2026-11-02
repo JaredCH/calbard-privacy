@@ -1,6 +1,6 @@
 # CalBard Privacy Policy
 
-**Last updated: 2026-11-01**
+**Last updated: 2026-11-02**
 
 CalBard is a personal dashboard app for Android TV, tablets, and phones. It shows
 weather and calendar events on a single screen.
@@ -15,7 +15,7 @@ This policy explains what CalBard does with your information. The short version:
 CalBard is developed and published by an individual developer. For any privacy
 question, contact:
 
-**Email:** privacy@calbard.app
+**Email:** Hicksjaredc@gmail.com
 
 ---
 
