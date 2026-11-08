@@ -112,7 +112,7 @@
 <body>
 <main>
 <h1>CalBard Privacy Policy</h1>
-<p><strong>Last updated: 2026-11-02</strong></p>
+<p><strong>Last updated: 2026-11-08</strong></p>
 <p>CalBard is a personal dashboard app for Android TV, tablets, and phones. It shows
 weather and calendar events on a single screen.</p>
 <p>This policy explains what CalBard does with your information. The short version:
@@ -145,7 +145,7 @@ it. Nothing is uploaded to a CalBard server, because no such server exists.</p>
 <td>App preferences</td>
 </tr>
 <tr>
-<td>Cached weather and calendar responses</td>
+<td>Cached weather, calendar, and sports responses</td>
 <td>To show data instantly and work offline</td>
 <td>Local database</td>
 </tr>
@@ -157,7 +157,7 @@ it. Nothing is uploaded to a CalBard server, because no such server exists.</p>
 </tbody></table>
 <p>On Android, any credentials you enter are held in <code>EncryptedSharedPreferences</code>,
 which is backed by the Android Keystore. On the web build, they are held in the
-browser&#39;s <code>localStorage</code> for the site you loaded. Version 1.0.0 has no Google
+browser&#39;s <code>localStorage</code> for the site you loaded. Version 1.2.0 has no Google
 sign-in, so in practice the only credential-like value stored is the ICS feed URL
 you paste in.</p>
 <p><strong>CalBard does not collect:</strong> your name, your contacts, your device identifiers,
@@ -191,11 +191,18 @@ service. No other information about you is included unless noted.</p>
 <td>A plain HTTPS GET for the feed</td>
 <td>Read-only calendar events</td>
 </tr>
+<tr>
+<td><strong>AllGameTimes</strong> (schedule feeds)</td>
+<td>A plain HTTPS GET for the public schedule feed of the leagues you follow</td>
+<td>Sports schedules</td>
+</tr>
 </tbody></table>
 <p>CalBard does not operate a proxy or relay for these requests in the published
 Android app. Your device talks to each service directly.</p>
+<p>The sports section is on by default. You can turn it off in Settings → Sections,
+and no request is made to AllGameTimes while it is off.</p>
 <h3>Services not used in this version</h3>
-<p>Version 1.0.0 ships without the following integrations. They are listed here so
+<p>Version 1.2.0 ships without the following integrations. They are listed here so
 this policy stays accurate if a later version enables them; <strong>none of them is
 contacted by the app you installed</strong>:</p>
 <table>
@@ -203,18 +210,13 @@ contacted by the app you installed</strong>:</p>
 <tr>
 <th>Service</th>
 <th>Would be used for</th>
-<th>Status in 1.0.0</th>
+<th>Status in 1.2.0</th>
 </tr>
 </thead>
 <tbody><tr>
 <td><strong>Google Calendar API</strong> (<code>www.googleapis.com</code>)</td>
 <td>Read-only calendar events via OAuth</td>
 <td>Not enabled — no Google sign-in in this version</td>
-</tr>
-<tr>
-<td><strong>ESPN</strong> (<code>site.api.espn.com</code>)</td>
-<td>Sports scores and schedules</td>
-<td>Not enabled — sports section not included</td>
 </tr>
 <tr>
 <td><strong>RainViewer</strong> (<code>api.rainviewer.com</code>, <code>tilecache.rainviewer.com</code>)</td>
@@ -231,7 +233,7 @@ contacted by the app you installed</strong>:</p>
 version is published, and the &quot;Last updated&quot; date above will change.</p>
 <hr>
 <h2>4. Google Calendar data</h2>
-<p><strong>This section does not apply to version 1.0.0.</strong> The Google sign-in flow is not
+<p><strong>This section does not apply to version 1.2.0.</strong> The Google sign-in flow is not
 included in this version, so CalBard cannot request a Google scope and never
 receives Google Calendar data. It is kept here for a future version that adds
 Google sign-in.</p>
@@ -280,7 +282,7 @@ compromised, contact the address in section 1.</p>
 CalBard → Storage → Clear data</em>.</li>
 <li><strong>To delete only cached data:</strong> use the refresh/clear-cache control in CalBard&#39;s
 settings.</li>
-<li><strong>To revoke Google access:</strong> not applicable in version 1.0.0 — there is no
+<li><strong>To revoke Google access:</strong> not applicable in version 1.2.0 — there is no
 Google sign-in. If a later version adds it, you would remove the account in
 CalBard&#39;s settings and confirm at <a href="https://myaccount.google.com/permissions">https://myaccount.google.com/permissions</a>.</li>
 </ul>

@@ -1,6 +1,6 @@
 # CalBard Privacy Policy
 
-**Last updated: 2026-11-02**
+**Last updated: 2026-11-08**
 
 CalBard is a personal dashboard app for Android TV, tablets, and phones. It shows
 weather and calendar events on a single screen.
@@ -28,12 +28,12 @@ it. Nothing is uploaded to a CalBard server, because no such server exists.
 |---|---|---|
 | Your location (ZIP code or latitude/longitude that **you type in**) | To fetch weather for that place | App preferences |
 | Calendar feeds you add (ICS URLs) | To display your events | App preferences |
-| Cached weather and calendar responses | To show data instantly and work offline | Local database |
+| Cached weather, calendar, and sports responses | To show data instantly and work offline | Local database |
 | Display preferences (theme, layout, which sections are visible) | To remember your setup | App preferences |
 
 On Android, any credentials you enter are held in `EncryptedSharedPreferences`,
 which is backed by the Android Keystore. On the web build, they are held in the
-browser's `localStorage` for the site you loaded. Version 1.0.0 has no Google
+browser's `localStorage` for the site you loaded. Version 1.2.0 has no Google
 sign-in, so in practice the only credential-like value stored is the ICS feed URL
 you paste in.
 
@@ -54,20 +54,23 @@ service. No other information about you is included unless noted.
 | **Open-Meteo** (`api.open-meteo.com`, `geocoding-api.open-meteo.com`) | Latitude/longitude or a place name you typed | Weather forecast and geocoding |
 | **National Weather Service** (`api.weather.gov`) | Latitude/longitude | Active weather alerts (US only) |
 | **Your calendar host** (whatever ICS URL you add) | A plain HTTPS GET for the feed | Read-only calendar events |
+| **AllGameTimes** (schedule feeds) | A plain HTTPS GET for the public schedule feed of the leagues you follow | Sports schedules |
 
 CalBard does not operate a proxy or relay for these requests in the published
 Android app. Your device talks to each service directly.
 
+The sports section is on by default. You can turn it off in Settings → Sections,
+and no request is made to AllGameTimes while it is off.
+
 ### Services not used in this version
 
-Version 1.0.0 ships without the following integrations. They are listed here so
+Version 1.2.0 ships without the following integrations. They are listed here so
 this policy stays accurate if a later version enables them; **none of them is
 contacted by the app you installed**:
 
-| Service | Would be used for | Status in 1.0.0 |
+| Service | Would be used for | Status in 1.2.0 |
 |---|---|---|
 | **Google Calendar API** (`www.googleapis.com`) | Read-only calendar events via OAuth | Not enabled — no Google sign-in in this version |
-| **ESPN** (`site.api.espn.com`) | Sports scores and schedules | Not enabled — sports section not included |
 | **RainViewer** (`api.rainviewer.com`, `tilecache.rainviewer.com`) | Weather radar imagery | Not enabled — radar section not included |
 | **OpenStreetMap** (`tile.openstreetmap.org`) | Base map tiles | Not enabled — no map is rendered |
 
@@ -78,7 +81,7 @@ version is published, and the "Last updated" date above will change.
 
 ## 4. Google Calendar data
 
-**This section does not apply to version 1.0.0.** The Google sign-in flow is not
+**This section does not apply to version 1.2.0.** The Google sign-in flow is not
 included in this version, so CalBard cannot request a Google scope and never
 receives Google Calendar data. It is kept here for a future version that adds
 Google sign-in.
@@ -139,7 +142,7 @@ All CalBard data lives on your device and is under your control.
   CalBard → Storage → Clear data*.
 - **To delete only cached data:** use the refresh/clear-cache control in CalBard's
   settings.
-- **To revoke Google access:** not applicable in version 1.0.0 — there is no
+- **To revoke Google access:** not applicable in version 1.2.0 — there is no
   Google sign-in. If a later version adds it, you would remove the account in
   CalBard's settings and confirm at <https://myaccount.google.com/permissions>.
 
