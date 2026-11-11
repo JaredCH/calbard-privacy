@@ -1,26 +1,48 @@
-// Generates index.html from privacy-policy.md.
+// Generates the public legal pages from Markdown:
+//   privacy-policy.md -> index.html
+//   terms.md          -> terms.html
+//   licenses.md       -> licenses.html
+//
 // Run: node build.mjs
 // Requires: npm install marked
 
 import { readFileSync, writeFileSync } from 'node:fs';
 import { marked } from 'marked';
 
-const md = readFileSync(new URL('./privacy-policy.md', import.meta.url), 'utf8');
-
 // GitHub-flavoured markdown: tables, autolinks.
 marked.setOptions({ gfm: true, breaks: false });
 
-const body = marked.parse(md);
+const PAGES = [
+  {
+    source: 'privacy-policy.md',
+    output: 'index.html',
+    title: 'CalBard Privacy Policy',
+    description:
+      'CalBard privacy policy. CalBard has no server and no account system; your settings and saved dashboard data stay on your device.',
+  },
+  {
+    source: 'terms.md',
+    output: 'terms.html',
+    title: 'CalBard Terms of Use',
+    description:
+      'The terms that govern use of the CalBard app, including the licence, third-party data, warranty, and liability terms.',
+  },
+  {
+    source: 'licenses.md',
+    output: 'licenses.html',
+    title: 'CalBard Third-Party Notices',
+    description:
+      'Third-party software, font, and data-source licences for the CalBard app, with the full licence texts.',
+  },
+];
 
-const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CalBard Privacy Policy</title>
-<meta name="description" content="CalBard privacy policy. CalBard has no server and no account system; your data stays on your device.">
-<meta name="robots" content="index, follow">
-<style>
+const NAV = `<nav class="site-nav">
+  <a href="index.html">Privacy</a>
+  <a href="terms.html">Terms</a>
+  <a href="licenses.html">Licenses</a>
+</nav>`;
+
+const STYLE = `
   :root {
     color-scheme: light dark;
     --bg: #ffffff;
@@ -55,6 +77,25 @@ const html = `<!DOCTYPE html>
     max-width: 46rem;
     margin: 0 auto;
     padding: 2.5rem 1.25rem 5rem;
+  }
+  .site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
+    margin: 0 0 1.75rem;
+    padding: 0 0 0.85rem;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.9rem;
+  }
+  .site-nav a {
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .site-nav a:hover,
+  .site-nav a[aria-current="page"] {
+    color: var(--fg);
+    text-decoration: underline;
+    text-underline-offset: 3px;
   }
   h1 {
     font-size: 1.9rem;
@@ -121,20 +162,39 @@ const html = `<!DOCTYPE html>
     h1 { font-size: 1.55rem; }
     table { font-size: 0.875rem; }
   }
-</style>
+`;
+
+for (const page of PAGES) {
+  const md = readFileSync(new URL(`./${page.source}`, import.meta.url), 'utf8');
+  const body = marked.parse(md);
+  const nav = NAV.replace(
+    `href="${page.output}"`,
+    `href="${page.output}" aria-current="page"`,
+  );
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${page.title}</title>
+<meta name="description" content="${page.description}">
+<meta name="robots" content="index, follow">
+<style>${STYLE}</style>
 </head>
 <body>
 <main>
+${nav}
 ${body}
 <footer>
-  <p>CalBard is an independent app. This page is the canonical privacy policy
-  referenced from the Google Play listing and from the app's Settings &rarr;
-  About screen.</p>
+  <p>CalBard is an independent app. These pages are referenced from the store
+  listing and from the app's Settings &rarr; About screen.</p>
 </footer>
 </main>
 </body>
 </html>
 `;
 
-writeFileSync(new URL('./index.html', import.meta.url), html);
-console.log(`index.html written (${html.length} bytes)`);
+  writeFileSync(new URL(`./${page.output}`, import.meta.url), html);
+  console.log(`${page.output} written (${html.length} bytes)`);
+}
