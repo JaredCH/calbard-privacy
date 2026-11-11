@@ -1,6 +1,6 @@
 # CalBard Privacy Policy
 
-**Last updated: 2026-11-10**
+**Last updated: 2026-11-11**
 
 CalBard is a personal dashboard app for Android TV, tablets, and phones. It shows
 weather, calendars, sports schedules, and to-dos on a single screen.
@@ -68,7 +68,7 @@ privacy policies.
 | **Your calendar host** (whatever ICS URL you add) | A plain HTTPS GET for the feed | Read-only calendar events |
 | **AllGameTimes** (schedule feeds) | A plain HTTPS GET for the public schedule feed of the leagues you follow | Sports schedules |
 
-The sports section is on by default. You can turn it off in Settings → Sections,
+The sports section is on by default. You can turn it off in Settings → Display → Sections,
 and no request is made to AllGameTimes while it is off.
 
 ### Services not used in this version
